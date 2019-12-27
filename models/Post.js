@@ -1,23 +1,25 @@
 const mongoose = require("mongoose");
 
-const { categorySchema } = require("./Category");
-
 const Schema = mongoose.Schema;
-
 const postSchema = new Schema({
 	title: {
 		type: String,
 		required: true,
 		minlength: 5,
-		maxlength: 50
+		maxlength: 50,
+		unique: true
 	},
 	image: {
 		type: String,
 		required: true
 	},
 	category: {
-		type: categorySchema,
-		required: true
+		type: Schema.Types.ObjectId,
+		ref: "Category"
+	},
+	user: {
+		type: Schema.Types.ObjectId,
+		ref: "User"
 	},
 	content: {
 		type: String,
