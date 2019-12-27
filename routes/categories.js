@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const auth = require("../middleware/auth");
 const pascal = require("../utils/pascal");
-const { Category } = require("../models/Category");
+const Category = require("../models/Category");
 const validate = require("../validation/category");
 
 // private
