@@ -1,0 +1,4 @@
+{
+	"mongoDbUrl": "mongoSecret",
+	"jwtSecret": "jwtPrivateKey"
+}
